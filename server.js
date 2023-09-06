@@ -2,7 +2,7 @@ const express = require("express")
 const publicRoutes = require("./app/src/routes/public.routes")
 require("./app/src/config/dbConfig").getDbConnection()
 
-const authMiddlerware = require("./middleware/auth.middleware")
+const authMiddlerware = require("./app/src/middleware/auth.middleware")
 const cors = require("cors")
 
 const app = express()
