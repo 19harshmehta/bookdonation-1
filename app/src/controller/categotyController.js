@@ -33,3 +33,15 @@ module.exports.deleteCategoryById = function(req,res)
     })
      
 }
+
+module.exports.getCategoryIdByName = function(req,res)
+{
+    let categoryName = req.body.categoryName
+    console.log(categoryName);
+
+    CategoryModel.findOne({categoryName: categoryName}).then((data)=>{
+      res.json({"msg":"Id retrived" , "data":data , "rcode":200})
+    }).catch((err)=>{
+      res.json({ "msg":"No Rec Found" , "data":err , "rcode":-9})      
+    })
+}

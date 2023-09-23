@@ -9,7 +9,8 @@ const ItemSchema = new mongoose.Schema({
         type:Number,
         required:true
     },
-    categoryId:{
+    categoryId:
+    {
         type:String,
         required:true
     }
