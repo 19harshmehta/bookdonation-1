@@ -50,3 +50,16 @@ module.exports.deleteItemById = function(req,res)
     })
      
 }
+
+
+module.exports.getItemIdByName = function(req,res)
+{
+    let itemName = req.body.itemName
+    console.log(itemName);
+
+    ItemModel.findOne({itemName: itemName}).then((data)=>{
+      res.json({"msg":"Id retrived" , "data":data , "rcode":200})
+    }).catch((err)=>{
+      res.json({ "msg":"No Rec Found" , "data":err , "rcode":-9})      
+    })
+}

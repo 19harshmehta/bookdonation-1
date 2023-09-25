@@ -18,6 +18,7 @@ router.post("/getidbyname",categoryController.getCategoryIdByName)
 router.post("/additem",ItemController.addItem)
 router.get("/getallitems",ItemController.getAllItems)
 router.delete("/deleteitem/:itemId",ItemController.deleteItemById)
+router.post("/getitembyname",ItemController.getItemIdByName)
 
 
 module.exports = router
