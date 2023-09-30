@@ -2,6 +2,7 @@ const express = require("express")
 const categoryController = require("../controller/categotyController")
 const authMiddleware = require("../middleware/auth.middleware")
 const ItemController = require("../controller/itemController")
+const donationController = require("../controller/donationController")
 
 const router = express.Router()
 
@@ -20,5 +21,8 @@ router.get("/getallitems",ItemController.getAllItems)
 router.delete("/deleteitem/:itemId",ItemController.deleteItemById)
 router.post("/getitembyname",ItemController.getItemIdByName)
 
+
+//donation
+router.post("/changestatus",donationController.changeStatus)
 
 module.exports = router

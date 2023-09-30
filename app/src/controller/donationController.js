@@ -54,4 +54,23 @@ module.exports.getAllDonations = function(req,res){
       res.json({data:data,msg:"Data Retrived",rcode:200})
     })
 }
+
+//change status
+
+
+module.exports.changeStatus = async function(req, res) {
+    try 
+    {
+      const donationsToUpdate = req.body;
   
+      for (const donation of donationsToUpdate) {
+        const { donationId, newStatus } = donation;
+        await DoantionModel.findByIdAndUpdate(donationId, { statusInd: newStatus });
+      }
+  
+      res.json({ message: 'Status updated successfully' });
+    } catch (error) {
+      res.status(500).json({ message: 'Internal Server Error' });
+    }
+  };
+ 
