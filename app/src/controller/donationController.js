@@ -68,9 +68,9 @@ module.exports.changeStatus = async function(req, res) {
         await DoantionModel.findByIdAndUpdate(donationId, { statusInd: newStatus });
       }
   
-      res.json({ message: 'Status updated successfully' });
+      res.json({ message: 'Status updated successfully',rcode:200 });
     } catch (error) {
-      res.status(500).json({ message: 'Internal Server Error' });
+      res.json({ message: 'Internal Server Error',rcode:- -9});
     }
   };
  
